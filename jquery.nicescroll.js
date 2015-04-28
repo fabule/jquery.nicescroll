@@ -1893,10 +1893,11 @@
         // test position        
         if (!self.ispage) {
           var pos = self.win.offset();
-          if (self.lastposition) {
-            var lst = self.lastposition;
-            if ((lst.top==pos.top)&&(lst.left==pos.left)) return self; //nothing to do            
-          }
+// Disabled this because it was preventing horizontal rail from updating correctly
+          // if (self.lastposition) {
+          //   var lst = self.lastposition;
+          //   if ((lst.top==pos.top)&&(lst.left==pos.left)) return self; //nothing to do            
+          // }
           self.lastposition = pos;
         } else {
           return self; //nothing to do
