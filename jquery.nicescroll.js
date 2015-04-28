@@ -382,8 +382,8 @@
       var dd = self.delaylist[name];
       var nw = (new Date()).getTime();      
       self.delaylist[name] = fn;
-      if (!dd) {        
-        setTimeout(function(){var fn=self.delaylist[name];self.delaylist[name]=false;fn.call();},tm);
+      if (!dd) {
+        setTimeout(function(){if(self){var fn=self.delaylist[name];self.delaylist[name]=false;fn.call();}},tm);
       }
     };
     
